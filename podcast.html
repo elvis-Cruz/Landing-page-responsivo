@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Podcast | Física Médica USP Butantã</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-podcast">
+
+  <header class="podcast-header">
+    <a href="index.html" class="podcast-voltar">
+      ← Voltar ao site
+    </a>
+    <span>FÍSICA MÉDICA · USP BUTANTÃ</span>
+  </header>
+
+  <main class="podcast-principal">
+
+    
+<!-- Menu lateral de episódios -->
+
+<!-- Menu lateral de episódios -->
+<aside class="episodios-menu">
+
+  <details class="episodios-painel">
+    <summary class="episodios-titulo">
+      <span class="episodios-icone">☰</span>
+      <span class="episodios-nome">Episódios</span>
+    </summary>
+
+    <nav class="episodios-lista" aria-label="Lista de episódios">
+
+      <a href="#" class="episodio-item"
+         data-video="1Ec-aIPrnV4hx3Jy9TVgBtVD1DMcVF4o3">
+        <strong>Beth</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+      <a href="#" class="episodio-item"
+         data-video="1GwBUabQ0p1VxFnHBL8KhtbfedZPVowzB">
+        <strong>Camila</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+ 
+
+      <a href="#" class="episodio-item"
+         data-video="1NqTiprLwLFAiVC4tX2nsq8OREtfSyy2u">
+        <strong>Francisco</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+      <a href="#" class="episodio-item"
+         data-video="18ufksEFypxfjxt4TUDNDwx_6GuTYFhY1">
+        <strong>Guilherme</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+      <a href="#" class="episodio-item"
+         data-video="1W3UpqyqArZSHfsdHmgR1xJeuRt-Scwy6">
+        <strong>Julia</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+      <a href="#" class="episodio-item"
+         data-video="1dZlNA3LcJfK_PuJlij9FqPf64z8WNk-x">
+        <strong>Pedro</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+      <a href="#" class="episodio-item"
+         data-video="1gcsEjufB6s98L9eXs8eE-8-cyNtHlV8x">
+        <strong>Wagner</strong>
+        <small>Ouvir entrevista</small>
+      </a>
+
+    </nav>
+  </details>
+
+</aside>
+
+
+    <section class="podcast-conteudo">
+
+      <div class="podcast-etiqueta">
+        FOTONCAST PODCAST UNIVERSITÁRIO
+      </div>
+
+      <h1>Conhecimento que conecta</h1>
+
+      <p class="podcast-descricao">
+        Um espaço de conversa com egressos de Física Médica da USP, que compartilham suas trajetórias, desafios, oportunidades e aprendizados ao longo da graduação, além de conselhos e dicas para quem está começando essa jornada.
+      </p>
+
+      <div class="podcast-player" id="episodio-1">
+        <iframe
+          src="https://drive.google.com/file/d/1Wn9hG7gYRLGQL4dTjdk51j7WZylULTbr/preview"
+          title="Reprodutor do podcast"
+          allow="autoplay"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="podcast-instrucao">
+        Clique no botão de reprodução para ouvir o episódio.
+      </p>
+
+      <a
+        class="podcast-link-inicio"
+        href="index.html">
+        Conheça o nosso site
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer class="podcast-rodape">
+    Física Médica USP Butantã · Universidade de São Paulo
+  </footer>
+
+
+
+<script>
+  const player = document.querySelector(
+    ".podcast-player iframe"
+  );
+
+  const episodios = document.querySelectorAll(
+    ".episodios-lista a[data-video]"
+  );
+
+  episodios.forEach(function(episodio) {
+    episodio.addEventListener("click", function(evento) {
+      evento.preventDefault();
+
+      const videoId = episodio.dataset.video;
+
+      player.src =
+        "https://drive.google.com/file/d/" +
+        videoId +
+        "/preview";
+
+      episodios.forEach(function(item) {
+        item.classList.remove("episodio-ativo");
+      });
+
+      episodio.classList.add("episodio-ativo");
+    });
+  });
+</script>
+
+
+</body>
+</html>
